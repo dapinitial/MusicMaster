@@ -1,0 +1,17 @@
+body {
+  background: #eee;
+  color: #111;
+}
+
+.App {
+  text-align: center;
+  padding: 5vh 5vw;
+}
+
+.App-title {
+  font-size: 24px;
+}
+
+.App .input-group-addon {
+  cursor: pointer;
+}
