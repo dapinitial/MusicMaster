@@ -15,7 +15,7 @@ class App extends Component {
     console.log('this.state', this.state);
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     const FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
-    const ACCESS_TOKEN = 'BQAwXtkepUy25EgIgR3yg0jkP_fXhXBsGP_sG_msaZc84vQTdxzhYRfeGraCmfSUsL4ZvbNGiC4fqgpRQzX-ww';
+    const ACCESS_TOKEN = 'BQBJ4dEfCdlwfI1ovuueHa591VTcZtfPfBOx1jvkxSaR_zishFM5iQw4wbHLIrVGBiIVsgdDtW-XaU3S2oA7hw';
 
     console.log('FETCH_URL', FETCH_URL);
 
@@ -28,7 +28,12 @@ class App extends Component {
       cache: 'default'
     })
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => {
+      const artist = json.artists.items[0];
+      console.log('json', json);
+      console.log('artist', artist);
+      this.setState({artist});
+    });
   }
 
   render() {
