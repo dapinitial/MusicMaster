@@ -8,17 +8,19 @@ class App extends Component {
     super(props);
     this.state = {
       query: '',
-      artist: null
+      artist: null,
+      tracks: []
     }
   }
 
   search() {
-    console.log('this.state', this.state);
+    // console.log('this.state', this.state);
+    const ACCESS_TOKEN = 'BQCudh0iCFQQnuanqSVacF6gyMxPEYuNGZNO3LHpQQARkeXrck0vRX7Bh5O-wpBxAYyRaznn-ebJYEFbfitZBQ';
     const BASE_URL = 'https://api.spotify.com/v1/search?';
-    const FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
-    const ACCESS_TOKEN = 'BQB-Sg16UEF7i1z1v0oDb7FRO0jiW0mVGUUYVbepyrglRfuUX9u6nq9qiVjImdv8V3kvkSE1SDHploh4p9qMTg';
+    const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
+    let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
 
-    console.log('FETCH_URL', FETCH_URL);
+    // console.log('FETCH_URL', FETCH_URL);
 
     fetch(FETCH_URL, {
       method: 'GET',
@@ -31,9 +33,22 @@ class App extends Component {
     .then(response => response.json())
     .then(json => {
       const artist = json.artists.items[0];
-      console.log('json', json);
-      console.log('artist', artist);
+      // console.log('json', json);
+      // console.log('artist', artist);
       this.setState({artist});
+      FETCH_URL = `${ALBUM_URL}${artist.id}/top-tracks?country=US&`;
+      fetch(FETCH_URL, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Bearer ' + ACCESS_TOKEN
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        console.log('artist\'s top tracks: ', json);
+        const { tracks } = json;
+        this.setState({tracks})
+      })
     });
   }
 
