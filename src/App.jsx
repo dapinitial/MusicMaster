@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import Profile from './Profile';
+import Gallery from './Gallery';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class App extends Component {
 
   search() {
     // console.log('this.state', this.state);
-    const ACCESS_TOKEN = 'BQCudh0iCFQQnuanqSVacF6gyMxPEYuNGZNO3LHpQQARkeXrck0vRX7Bh5O-wpBxAYyRaznn-ebJYEFbfitZBQ';
+    const ACCESS_TOKEN = 'BQC22PVzHswQlDIuROXjrXfzjwjZ_PPTNYd8HkAoHRsIPqQ1JoQDB4F0thf39MkTgChT-dz2VVlCuTk7YTo0tw';
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
@@ -82,9 +83,9 @@ class App extends Component {
               <Profile
                 artist={this.state.artist}
               />
-              <div className="Gallery">
-                <div>Gallery</div>
-              </div>
+              <Gallery
+                tracks={this.state.tracks}
+              />
             </div>
           : <div></div>
         }

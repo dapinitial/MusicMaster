@@ -3,6 +3,14 @@
   justify-content: center;
 }
 
+.profile-info {
+  margin-left: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .profile-img {
   width: 150px;
   height: 150px;
@@ -14,8 +22,8 @@
 .profile-name {
   font-size: 26px;
 }
-.
+
 .profile-followers,
-.profile-genres. {
+.profile-genres {
   font-size: 18px;
 }

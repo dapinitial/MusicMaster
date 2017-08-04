@@ -3,12 +3,7 @@ import './App.css';
 import './Profile.css';
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
+    
   render() {
     console.log('this.props', this.props);
     let artist = {name: '', followers: {total: ''}, images: [{url: ''}], genres: []};
