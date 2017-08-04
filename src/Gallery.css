@@ -29,3 +29,39 @@
   bottom: 0;
   padding: 10px;
 }
+
+.track-play {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+}
+
+.track-play-inner {
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  background-color: white;
+  border-radius: 30px;
+  height: 60px;
+  width: 60px;
+  color: #111;
+  padding-top: 13px;
+  margin-left: 80px;
+  margin-top: 80px;
+  opacity: 0;
+}
+
+.track-play-inner:hover {
+  opacity: .8;
+  animation-name: fade-in;
+  animation-duration: .25s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .8;
+  }
+}

@@ -39,5 +39,29 @@ export default StyleSheet.create({
         "paddingRight": 10,
         "paddingBottom": 10,
         "paddingLeft": 10
+    },
+    "track-play": {
+        "position": "absolute",
+        "width": 220,
+        "height": 220
+    },
+    "track-play-inner": {
+        "position": "absolute",
+        "textAlign": "center",
+        "fontSize": 25,
+        "backgroundColor": "white",
+        "borderRadius": 30,
+        "height": 60,
+        "width": 60,
+        "color": "#111",
+        "paddingTop": 13,
+        "marginLeft": 80,
+        "marginTop": 80,
+        "opacity": 0
+    },
+    "track-play-inner:hover": {
+        "opacity": 0.8,
+        "animationName": "fade-in",
+        "animationDuration": ".25s"
     }
 });

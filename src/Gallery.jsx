@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Glyphicon } from 'react-bootstrap';
+
 import './Gallery.css';
 
 class Gallery extends Component {
@@ -8,7 +10,7 @@ class Gallery extends Component {
       playingUrl: '',
       audio: null,
       playing: false
-    }
+    };
   }
   playAudio(previewUrl) {
     let audio = new Audio(previewUrl);
@@ -16,15 +18,15 @@ class Gallery extends Component {
       audio.play();
       this.setState({
         playing: true,
-        playingUlr: previewUrl,
+        playingUrl: previewUrl,
         audio
-      })
+      });
     } else {
       if (this.state.playingUrl === previewUrl) {
         this.state.audio.pause();
         this.setState({
           playing: false
-        })
+        });
       } else {
         this.state.audio.pause();
         audio.play();
@@ -32,7 +34,7 @@ class Gallery extends Component {
           playing: true,
           playingUrl: previewUrl,
           audio
-        })
+        });
       }
     }
   }
@@ -56,6 +58,17 @@ class Gallery extends Component {
                   className="track-img"
                   alt="track"
                 />
+                <div className="track-play">
+                  <div className="track-play-inner">
+                    {
+                      this.state.playing
+                        ? <Glyphicon
+                          glyph="pause"></Glyphicon>
+                          : <Glyphicon
+                          glyph="play"></Glyphicon>
+                    }
+                  </div>
+                </div>
                 <p className="track-text">
                   {track.name}
                 </p>

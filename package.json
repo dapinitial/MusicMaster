@@ -2,6 +2,7 @@
   "name": "musicmaster",
   "version": "0.1.0",
   "private": true,
+  "jshintConfig": { "esnext": true },
   "dependencies": {
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
