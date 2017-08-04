@@ -16,7 +16,7 @@ class App extends Component {
 
   search() {
     // console.log('this.state', this.state);
-    const ACCESS_TOKEN = 'BQC22PVzHswQlDIuROXjrXfzjwjZ_PPTNYd8HkAoHRsIPqQ1JoQDB4F0thf39MkTgChT-dz2VVlCuTk7YTo0tw';
+    const ACCESS_TOKEN = 'BQD9_5JSXTBO4EFk1wSpRbSvd20--LvjzGADYNPlLM6qaC60ppWnJF1qUciZIRFpvRSAsgmvndErh5tzpWpZ7A';
     const BASE_URL = 'https://api.spotify.com/v1/search?';
     const ALBUM_URL = 'https://api.spotify.com/v1/artists/';
     let FETCH_URL = `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
